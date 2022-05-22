@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+    <body>
+        <header>
+            <img src = "graphics/unknown.png" width = "100" height = "100">
+            <li><a href="main.html">Home</a></li>
+            <li><a>About Us</a></li> 
+            <li><a href="info.html" >Info</a></li> 
+            <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+            <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+         </header>
+         
+         
+        <main> 
+
+            <h1>Please input your desired location</h1>
+           
+            <div>
+                <img src = "graphics/mainpic.svg" width = "600" height = "600">
+            </div>
+
+            <py-script> 
+                print("Enter yes or no")
+                vaccine = input("Have you been double vaccinated?").lower()
+                travel = input("Have you traveled outside of Canada in the last 14 Days?").lower()
+                contact = input("Have you been in contact with someone that has tested positive for COVID recently?").lower()
+                coughing = input("Have you had a heavy cough in the past week?").lower()
+                
+                if vaccine == "no":
+                    if coughing == "yes":
+                        if travel == "yes" or contact == "yes":
+                            print("You have contracted Covid-19")
+                        else:
+                            print("You have not contracted Covid-19")
+                    else:
+                        print("You have not contracted Covid-19")
+                else:
+                    if travel == "yes" and contact == "yes":
+                         print("You have contracted Covid-19")
+                    else:
+                        print("You have not contracted Covid-19")
+                
+                
+
+            
+            </py-script>|
+
+            
+            
+        </main>
+
+    </body>
+
+</html>
